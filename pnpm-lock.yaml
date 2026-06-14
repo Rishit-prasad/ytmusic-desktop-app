@@ -16,7 +16,7 @@ importers:
         version: 2.0.0(@types/node@25.5.2)
       '@electron/remote':
         specifier: 2.1.3
-        version: 2.1.3(electron@41.2.0)
+        version: 2.1.3(electron@42.4.0)
       '@ffmpeg.wasm/core-mt':
         specifier: 0.12.0
         version: 0.12.0
@@ -31,10 +31,10 @@ importers:
         version: 2.0.5
       '@ghostery/adblocker-electron':
         specifier: 2.14.1
-        version: 2.14.1(electron@41.2.0)
+        version: 2.14.1(electron@42.4.0)
       '@ghostery/adblocker-electron-preload':
         specifier: 2.14.1
-        version: 2.14.1(electron@41.2.0)
+        version: 2.14.1(electron@42.4.0)
       '@hono/node-server':
         specifier: 1.19.13
         version: 1.19.13(hono@4.12.12)
@@ -94,13 +94,10 @@ importers:
         version: 15.1.0
       custom-electron-prompt:
         specifier: 1.6.1
-        version: 1.6.1(electron@41.2.0)
+        version: 1.6.1(electron@42.4.0)
       deepmerge-ts:
         specifier: 7.1.5
         version: 7.1.5
-      electron:
-        specifier: 41.2.0
-        version: 41.2.0
       electron-debug:
         specifier: 4.1.0
         version: 4.1.0
@@ -276,6 +273,9 @@ importers:
       discord-api-types:
         specifier: 0.38.45
         version: 0.38.45
+      electron:
+        specifier: ^42.4.0
+        version: 42.4.0
       electron-builder:
         specifier: 26.8.1
         version: 26.8.1(electron-builder-squirrel-windows@26.8.1)
@@ -472,6 +472,10 @@ packages:
     resolution: {integrity: sha512-3LKP7F2+atl9vJFhaBjn4nOaSWahZ/yWjOvA4e5pnXkt2qyXRCHLxoBQy81GFtLGCq7K9lPm9R517M1U+/90Qg==}
     engines: {node: '>=18'}
 
+  '@electron-internal/extract-zip@1.0.3':
+    resolution: {integrity: sha512-OjKpjB7gohtEjZiq6nDx1egqjZJhGPN1iFOIED+NFhB/MMkXw/XRcHjh1DGXKT5z2W9eW7Jy2UKU3gpjvusFTQ==}
+    engines: {node: '>=22.12.0'}
+
   '@electron-toolkit/tsconfig@2.0.0':
     resolution: {integrity: sha512-AdPsP770WhW7b260h13SHMdmjEEHJL6xFtgi3jwgdsSQbJOkJLeNnnpZW9qxTPCvmRI6vmdzWz5K3gibFS6SNg==}
     peerDependencies:
@@ -493,6 +497,10 @@ packages:
   '@electron/get@3.1.0':
     resolution: {integrity: sha512-F+nKc0xW+kVbBRhFzaMgPy3KwmuNTYX1fx6+FxxoSnNgwYX6LD7AKBTWkU0MQ6IBoe7dz069CNkR673sPAgkCQ==}
     engines: {node: '>=14'}
+
+  '@electron/get@5.0.0':
+    resolution: {integrity: sha512-pjoBpru1KdEtcExBnuHAP1cAc/5faoedw0hzJkL3o4/IJp7HNF1+fbrdxT3gMYRX2oJfvnA/WXeCTVQpYYxyJA==}
+    engines: {node: '>=22.12.0'}
 
   '@electron/notarize@2.5.0':
     resolution: {integrity: sha512-jNT8nwH1f9X5GEITXaQ8IF/KdskvIkOFfB2CvwumsveVidzpSc+mvhhTMdAGSYF3O+Nq49lJ7y+ssODRXu06+A==}
@@ -2110,6 +2118,11 @@ packages:
   electron@41.2.0:
     resolution: {integrity: sha512-0OKLiymqfV0WK68RBXqAm3Myad2TpI5wwxLCBEUcH5Nugo3YfSk7p1Js/AL9266qTz5xZioUnxt9hG8FFwax0g==}
     engines: {node: '>= 12.20.55'}
+    hasBin: true
+
+  electron@42.4.0:
+    resolution: {integrity: sha512-OXXqh9LD9KxXPv2Fe25EfU9N9AvWTuV6V81sfhQaNvTAXCd9ONA+Q4OWvMe+CmYD6xIwjFxGGtG/ZphDYYC5OQ==}
+    engines: {node: '>= 22.12.0'}
     hasBin: true
 
   emoji-regex@8.0.0:
@@ -4224,6 +4237,10 @@ packages:
     resolution: {integrity: sha512-sC+b0tB1whOCzbtlx20fx3WgCXwkW627p4EA9uM+/tNNPkSS+eSEld6pAs9nDv7WbY1UUljBMYPtu9BCOrCWKA==}
     engines: {node: '>=18.17'}
 
+  undici@7.27.2:
+    resolution: {integrity: sha512-uZsKNuzQxDMUY6M3pIMvy5tvlGmtq8XJ2oLAkfRKGNu+1VQAIvLy2xIVG5ATZl5wDXl/tddByAWCizRbOme+TA==}
+    engines: {node: '>=20.18.1'}
+
   unicorn-magic@0.3.0:
     resolution: {integrity: sha512-+QBBXBCvifc56fsbuxZQ6Sic3wqqc3WWaqxs58gvJrcOuN83HGTCwz3oS5phzU9LthRNE9VrJCFCLUgHeeFnfA==}
     engines: {node: '>=18'}
@@ -4701,6 +4718,8 @@ snapshots:
     dependencies:
       discord-api-types: 0.38.45
 
+  '@electron-internal/extract-zip@1.0.3': {}
+
   '@electron-toolkit/tsconfig@2.0.0(@types/node@25.5.2)':
     dependencies:
       '@types/node': 25.5.2
@@ -4745,6 +4764,19 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
+  '@electron/get@5.0.0':
+    dependencies:
+      debug: 4.4.3
+      env-paths: 3.0.0
+      graceful-fs: 4.2.11
+      progress: 2.0.3
+      semver: 7.7.4
+      sumchecker: 3.0.1
+    optionalDependencies:
+      undici: 7.27.2
+    transitivePeerDependencies:
+      - supports-color
+
   '@electron/notarize@2.5.0':
     dependencies:
       debug: 4.4.3
@@ -4782,9 +4814,9 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  '@electron/remote@2.1.3(electron@41.2.0)':
+  '@electron/remote@2.1.3(electron@42.4.0)':
     dependencies:
-      electron: 41.2.0
+      electron: 42.4.0
 
   '@electron/universal@2.0.3':
     dependencies:
@@ -4980,16 +5012,16 @@ snapshots:
     dependencies:
       '@ghostery/adblocker-extended-selectors': 2.14.1
 
-  '@ghostery/adblocker-electron-preload@2.14.1(electron@41.2.0)':
+  '@ghostery/adblocker-electron-preload@2.14.1(electron@42.4.0)':
     dependencies:
       '@ghostery/adblocker-content': 2.14.1
-      electron: 41.2.0
+      electron: 42.4.0
 
-  '@ghostery/adblocker-electron@2.14.1(electron@41.2.0)':
+  '@ghostery/adblocker-electron@2.14.1(electron@42.4.0)':
     dependencies:
       '@ghostery/adblocker': 2.14.1
-      '@ghostery/adblocker-electron-preload': 2.14.1(electron@41.2.0)
-      electron: 41.2.0
+      '@ghostery/adblocker-electron-preload': 2.14.1(electron@42.4.0)
+      electron: 42.4.0
       tldts-experimental: 7.0.27
 
   '@ghostery/adblocker-extended-selectors@2.14.1': {}
@@ -6166,9 +6198,9 @@ snapshots:
 
   csstype@3.1.3: {}
 
-  custom-electron-prompt@1.6.1(electron@41.2.0):
+  custom-electron-prompt@1.6.1(electron@42.4.0):
     optionalDependencies:
-      electron: 41.2.0
+      electron: 42.4.0
 
   data-view-buffer@1.0.2:
     dependencies:
@@ -6497,6 +6529,14 @@ snapshots:
       '@electron/get': 2.0.3
       '@types/node': 24.12.0
       extract-zip: 2.0.1
+    transitivePeerDependencies:
+      - supports-color
+
+  electron@42.4.0:
+    dependencies:
+      '@electron-internal/extract-zip': 1.0.3
+      '@electron/get': 5.0.0
+      '@types/node': 24.12.0
     transitivePeerDependencies:
       - supports-color
 
@@ -8805,6 +8845,9 @@ snapshots:
   undici-types@7.18.2: {}
 
   undici@6.24.1: {}
+
+  undici@7.27.2:
+    optional: true
 
   unicorn-magic@0.3.0: {}
 

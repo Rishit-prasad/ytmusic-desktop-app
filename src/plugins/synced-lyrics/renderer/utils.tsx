@@ -1,6 +1,4 @@
 import { render } from 'solid-js/web';
-import KuromojiAnalyzer from 'kuroshiro-analyzer-kuromoji';
-import Kuroshiro from 'kuroshiro';
 import { romanize as esHangulRomanize } from 'es-hangul';
 import hanja from 'hanja';
 import { pinyin } from 'pinyin-pro';
@@ -146,18 +144,25 @@ const shinjitai = [
 const shinjitaiRegex = new RegExp(`[${shinjitai.join('')}]`);
 
 const kuroshiro = lazyVar.lazy(async () => {
+  const [
+    { default: KuromojiAnalyzer },
+    { default: Kuroshiro },
+  ] = await Promise.all([
+    import('kuroshiro-analyzer-kuromoji'),
+    import('kuroshiro'),
+  ]);
   const _kuroshiro = new Kuroshiro();
   await _kuroshiro.init(
     new KuromojiAnalyzer({
       dictPath: 'https://cdn.jsdelivr.net/npm/kuromoji@0.1.2/dict/',
     }),
   );
-  return _kuroshiro;
+  return { kuroshiro: _kuroshiro, hasKana: (line: string) => /[\u3040-\u309F\u30A0-\u30FF]/.test(line) };
 });
 
 const hasJapanese = (lines: string[]) =>
   lines.some(
-    (line) => Kuroshiro.Util.hasKana(line) || shinjitaiRegex.test(line),
+    (line) => /[\u3040-\u309F\u30A0-\u30FF]/.test(line) || shinjitaiRegex.test(line),
   );
 
 // tests for Hangul characters, sufficient for our use case
@@ -178,7 +183,7 @@ const hasHindi = (lines: string[]) =>
   lines.some((line) => /[\u0900-\u097F]+/.test(line));
 
 export const romanizeJapanese = async (line: string) =>
-  (await kuroshiro.get()).convert(line, {
+  (await kuroshiro.get()).kuroshiro.convert(line, {
     to: 'romaji',
     mode: 'spaced',
   }) ?? line;
