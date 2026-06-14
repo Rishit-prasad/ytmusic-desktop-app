@@ -6,6 +6,7 @@ files:
   - assets
   - license
   - 'node_modules/**'
+  - 'node_modules/.pnpm/**'
   - '!node_modules/**/.cache'
   - '!node_modules/**/*.map'
   - '!node_modules/**/*.ts'
