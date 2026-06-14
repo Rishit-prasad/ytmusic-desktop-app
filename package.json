@@ -1,16 +1,16 @@
 {
   "name": "ytmusic-app",
-  "desktopName": "com.placeholder.ytmusic_app",
+  "desktopName": "com.yt_music_desktop.ytmusic_app",
   "productName": "YT Music",
   "version": "1.0.0",
   "description": "YT Music Desktop App",
   "main": "./dist/main/index.js",
   "type": "module",
   "license": "MIT",
-  "repository": "",
+  "repository": "https://github.com/rishit-symbi/ytmusic-desktop-app.git",
   "author": {
-    "name": "",
-    "email": ""
+    "name": "Rishit-symbi",
+    "email": "rishitsingh70@gmail.com"
   },
   "scripts": {
     "test": "pnpm playwright test",
