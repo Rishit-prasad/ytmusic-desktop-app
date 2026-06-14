@@ -2,7 +2,7 @@
   "name": "ytmusic-app",
   "desktopName": "com.yt_music_desktop.ytmusic_app",
   "productName": "YT Music",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "YT Music Desktop App",
   "main": "./dist/main/index.js",
   "type": "module",
