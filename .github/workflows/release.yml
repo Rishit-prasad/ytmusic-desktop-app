@@ -16,9 +16,6 @@ jobs:
           - os: windows-latest
             target: win
             artifact-name: windows
-          - os: macos-latest
-            target: mac
-            artifact-name: macos
 
     runs-on: ${{ matrix.os }}
 
@@ -26,7 +23,7 @@ jobs:
       - name: Free up disk space (Ubuntu)
         if: matrix.os == 'ubuntu-latest'
         run: |
-          sudo rm -rf /usr/share/dotnet /opt/ghc /usr/local/share/boost /usr/local/lib/android
+          sudo rm -rf /usr/share/dotnet /opt/ghc /usr/local/share/boost /usr/local/lib/android /opt/hostedtoolcache/CodeQL
           sudo apt-get clean
           df -h
 
@@ -52,9 +49,17 @@ jobs:
 
       - name: Install dependencies
         run: pnpm install --frozen-lockfile
+        env:
+          ELECTRON_SKIP_BINARY_DOWNLOAD: 1
 
       - name: Build distributables
-        run: pnpm electron-builder --${{ matrix.target }} -p never
+        shell: bash
+        run: |
+          if [ "${{ runner.os }}" = "Windows" ]; then
+            pnpm electron-builder --win portable:x64 -p never
+          else
+            pnpm electron-builder --${{ matrix.target }} -p never
+          fi
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
