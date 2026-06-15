@@ -21,6 +21,54 @@ A desktop wrapper for YouTube Music with plugin support.
 >
 > This application (extension) is provided "AS IS", and you use it at your own risk. In no event shall the developers or contributors be liable for any claim, damages, or other liability, including any legal consequences, arising from, out of, or in connection with the software or the use or other dealings in the software. The responsibility for any and all outcomes of using this software rests entirely with the user.
 
+## Download & Installation
+
+Pre-built binaries are available for **Linux** and **Windows** via the [Releases](https://github.com/rishit-symbi/ytmusic-desktop-app/releases) page.
+
+### Linux
+
+| Format | Distro | File |
+|--------|--------|------|
+| **AppImage** | Any Linux (universal) | `YT Music-*.AppImage` |
+| **DEB** | Debian / Ubuntu / Linux Mint / Pop!_OS | `ytmusic_*.deb` |
+| **RPM** | Fedora / RHEL / CentOS | `ytmusic_*.rpm` |
+| **tar.gz** | Any Linux (portable) | `ytmusic-*.tar.gz` |
+
+**AppImage:**
+```bash
+chmod +x YT\ Music-*.AppImage
+./YT\ Music-*.AppImage
+```
+
+**Debian/Ubuntu:**
+```bash
+sudo dpkg -i ytmusic_*.deb
+# or install dependencies if needed:
+sudo apt install -f
+```
+
+**Fedora/RHEL:**
+```bash
+sudo rpm -i ytmusic_*.rpm
+```
+
+**Portable archive:**
+```bash
+tar -xzf ytmusic-*.tar.gz
+./ytmusic
+```
+
+### Windows
+
+| Format | File |
+|--------|------|
+| **Installer (NSIS)** | `YT Music Setup *.exe` |
+| **Portable** | `YT Music *.exe` |
+
+Run the installer `.exe` and follow the setup wizard. The portable version can be launched directly without installation.
+
+> **Tip:** You can also build from source — see the build scripts in `package.json` (`pnpm dist:linux`, `pnpm dist:win`, etc.).
+
 ## FAQ
 
 ### Why apps menu isn't showing up?
